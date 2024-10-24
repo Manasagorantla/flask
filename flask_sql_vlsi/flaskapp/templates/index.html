@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="viewport" content="width=device-width", initial-scale="1.0">
+        <title>sqlite with flask</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='style,css')}}">
+        <script src="{{ yrl_for<'stastic',filename='scripts.js'}}" defer></script>
+    </head>
+</html>
+<body>
+<h1>ENTRIES</h1>
+<form method="post",action="/add">
+<input type ="text" name="title" placeholder="title" requried>
+<textarea name="content" placeholder="content" requried></textarea>
+<button type="submit">Add Entry</buttton>
+</form>
+<ul>
+    {% for entry in rntries %}
+    <lli>
+        <strong>{{ entry['title']}}</strong>:
+        {{ entry['content']}}
+        <a href="{{ url_for('delete_entry',id=entry['id'])}}">Delete</a>
+    </lli>
+</ul>
+</body>
+</html>
